@@ -39,3 +39,8 @@ function autoScroll() {
 
 // Set interval untuk menggulir otomatis setiap 5 detik
 setInterval(autoScroll, 5000);
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+}

@@ -25,6 +25,42 @@ body {
     align-items: center; /* Menjaga elemen tetap sejajar secara vertikal */
 }
 
+/* Navigation Links - Default (desktop view) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Links - Mobile (hidden by default) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #0066cc;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Show the menu when it's toggled */
+    .nav-links.show {
+        display: flex;
+    }
+}
+
 .navbar .logo {
     color: #fff;
     font-size: 24px;
@@ -226,5 +262,13 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #0066cc;
+    color: white;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
     color: white;
 }
