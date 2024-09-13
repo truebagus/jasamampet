@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentImageIndex = 0;
 
     function changeBackgroundImage() {
-        heroSection.style.backgroundImage = images[currentImageIndex];
-        currentImageIndex = (currentImageIndex + 1) % images.length;
+        heroSection.style.backgroundImage = images[currentImageIndex % images.length];
+        currentImageIndex++;
     }
 
     // Change background every 5 seconds
@@ -24,16 +24,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Service cards scrolling
     const serviceCards = document.querySelector('.service-cards');
-    const cards = document.querySelectorAll('.card');
 
-    if (cards.length > 0) {
-        const cardWidth = cards[0].offsetWidth + 20; // Width of a card + gap
-        const totalScrollWidth = cardWidth * cards.length;
+    if (serviceCards) {
+        const cardWidth = serviceCards.offsetWidth + 20; // Width of a card + gap
         let scrollAmount = 0;
 
         function autoScroll() {
             scrollAmount += cardWidth;
-            if (scrollAmount >= totalScrollWidth) {
+            if (scrollAmount >= cardWidth * serviceCards.children.length) {
                 scrollAmount = 0; // Kembali ke awal saat mencapai akhir
             }
             serviceCards.scrollTo({
@@ -48,8 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Toggle menu
     function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('show');
+        document.querySelector('.nav-links').classList.toggle('show');
     }
 
     document.querySelector('.hamburger').addEventListener('click', toggleMenu);
