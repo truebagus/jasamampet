@@ -1,4 +1,6 @@
-const heroSection = document.querySelector('.hero-section');
+document.addEventListener('DOMContentLoaded', function () {
+    // Hero section image slider
+    const heroSection = document.querySelector('.hero-section');
 
     const images = [
         'url(https://www.southsurreyplumbing.com/wp-content/uploads/2020/03/drain-clogging-1.jpg)',
@@ -20,27 +22,35 @@ const heroSection = document.querySelector('.hero-section');
     // Initial background setup
     changeBackgroundImage();
 
-const serviceCards = document.querySelector('.service-cards');
-const cards = document.querySelectorAll('.card');
-const cardWidth = cards[0].offsetWidth + 20; // Width of a card + gap
-const totalScrollWidth = cardWidth * cards.length;
-let scrollAmount = 0;
+    // Service cards scrolling
+    const serviceCards = document.querySelector('.service-cards');
+    const cards = document.querySelectorAll('.card');
 
-function autoScroll() {
-    scrollAmount += cardWidth;
-    if (scrollAmount >= totalScrollWidth) {
-        scrollAmount = 0; // Kembali ke awal saat mencapai akhir
+    if (cards.length > 0) {
+        const cardWidth = cards[0].offsetWidth + 20; // Width of a card + gap
+        const totalScrollWidth = cardWidth * cards.length;
+        let scrollAmount = 0;
+
+        function autoScroll() {
+            scrollAmount += cardWidth;
+            if (scrollAmount >= totalScrollWidth) {
+                scrollAmount = 0; // Kembali ke awal saat mencapai akhir
+            }
+            serviceCards.scrollTo({
+                left: scrollAmount,
+                behavior: "smooth"
+            });
+        }
+
+        // Set interval untuk menggulir otomatis setiap 5 detik
+        setInterval(autoScroll, 5000);
     }
-    serviceCards.scrollTo({
-        left: scrollAmount,
-        behavior: "smooth"
-    });
-}
 
-// Set interval untuk menggulir otomatis setiap 5 detik
-setInterval(autoScroll, 5000);
+    // Toggle menu
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
 
-function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('show');
-}
+    document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+});
