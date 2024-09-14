@@ -52,14 +52,39 @@
     border-radius: 5px;
   }
   
-  /* Div dengan background image */
+  /* Div dengan background slideshow */
   .background-section {
-    background-image: url('background.jpg'); /* Ganti dengan gambar yang Anda inginkan */
+    width: 100%;
+    height: 400px; /* Atur tinggi elemen background */
     background-size: cover;
     background-position: center;
-    padding: 100px 20px;
+    background-repeat: no-repeat;
     color: white;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+  }
+  
+  /* Animasi background berjalan */
+  @keyframes slideshow {
+    0% {
+      background-image: url('https://th.bing.com/th/id/OIP.2KW49u-g_W4hgM3rdm3nowHaFM?rs=1&pid=ImgDetMain');
+    }
+    33% {
+      background-image: url('https://www.emuplumbing.com.au/wp-content/uploads/shutterstock_1452207740-scaled.jpg');
+    }
+    66% {
+      background-image: url('https://procrewschedule.com/wp-content/uploads/2020/06/plumber-at-work-in-a-bathroom-1024x683-1.jpg');
+    }
+    100% {
+      background-image: url('https://www.emergencyplumbingsquad.com/wp-content/uploads/2020/09/professional-plumber-photo-repairing-sink.jpg');
+    }
+  }
+  
+  .background-section {
+    animation: slideshow 15s infinite;
   }
   
   section {
