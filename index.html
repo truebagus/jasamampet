@@ -1,49 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Hamburger Menu with Logo and Background Image</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Mampet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Your Reliable Plumbing Service">
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- Add a favicon -->
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">
-        <img src="logo.png" alt="Logo" />
-      </div>
-      <div class="hamburger" id="hamburger">
-        &#9776; <!-- Icon hamburger -->
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about-us">About Us</a></li>
-        <li><a href="#service">Service</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Jasa Mampet</div>
+            <div class="hamburger" id="hamburger">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="hero-section">
+        <div class="hero-content">
+                <h1>Your Reliable Plumbing Service</h1>
+                <p>We fix your clogged drains quickly and professionally!</p>
+                <a href="#" class="btn">Learn More</a>
+        </div>
+    </div>
 
-  <!-- Div dengan background gambar di bawah logo -->
-  <div class="background-section">
-    <h2>Welcome to Our Website</h2>
-    <p>This is a section with a background image.</p>
-  </div>
+    <main>
+        <section id="about-us" class="about-us">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Jasa Mampet is your go-to service for solving plumbing issues. With years of experience, our team ensures quick and effective solutions to keep your home or business running smoothly.</p>
+            </div>
+        </section>
 
-  <section id="about-us">
-    <h1>About Us</h1>
-    <p>This is the About Us section.</p>
-  </section>
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-cards">
+                    <div class="card">
+                        <h3>Drain Cleaning</h3>
+                        <p>We provide professional drain cleaning services for residential and commercial properties.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pipe Repair</h3>
+                        <p>Our experienced technicians repair broken pipes, ensuring water flows smoothly again.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Emergency Service</h3>
+                        <p>We offer 24/7 emergency services to address your plumbing problems whenever they arise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="service">
-    <h1>Service</h1>
-    <p>This is the Service section.</p>
-  </section>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Have any questions or need help? Reach out to us through the form below!</p>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-  <section id="contact">
-    <h1>Contact</h1>
-    <p>This is the Contact section.</p>
-  </section>
+    <script src="js/script.js"></script>
 
-  <script src="js/script.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Jasa Mampet. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

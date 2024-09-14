@@ -2,141 +2,246 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 15px 20px;
-  }
-  
-  nav {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .logo img {
-    max-width: 120px; /* Ukuran logo */
-  }
-  
-  .hamburger {
-    font-size: 30px;
-    cursor: pointer;
-    display: none;
-  }
-  
-  .nav-links {
-    list-style: none;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
     display: flex;
-    align-items: center;
-  }
-  
-  .nav-links li {
+    list-style: none;
+}
+
+.nav-links li {
     margin-left: 20px;
-  }
-  
-  .nav-links li a {
+}
+
+.nav-links a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px;
-  }
-  
-  .nav-links li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-  }
-  
-  /* Div dengan background slideshow */
-  .background-section {
-    width: 100%;
-    height: 400px; /* Atur tinggi elemen background */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+}
+
+.navbar .nav-links a:hover {
+    color: #ffcc00;
+}
+
+.hero-section {
+    position: relative;
+    text-align: center;
+    background: url('plumbing.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-  }
-  
-  /* Animasi background berjalan */
-  @keyframes slideshow {
-    0% {
-      background-image: url('https://th.bing.com/th/id/OIP.2KW49u-g_W4hgM3rdm3nowHaFM?rs=1&pid=ImgDetMain');
-    }
-    33% {
-      background-image: url('https://www.emuplumbing.com.au/wp-content/uploads/shutterstock_1452207740-scaled.jpg');
-    }
-    66% {
-      background-image: url('https://procrewschedule.com/wp-content/uploads/2020/06/plumber-at-work-in-a-bathroom-1024x683-1.jpg');
-    }
-    100% {
-      background-image: url('https://www.emergencyplumbingsquad.com/wp-content/uploads/2020/09/professional-plumber-photo-repairing-sink.jpg');
-    }
-  }
-  
-  .background-section {
-    animation: slideshow 15s infinite;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 100px 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
+    transition: background-image 1s ease-in-out;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
     font-size: 24px;
-  }
-  
-  section {
-    padding: 50px;
-    margin: 20px 0;
-  }
-  
-  #about-us {
-    background-color: #f4f4f4;
-  }
-  
-  #service {
-    background-color: #eaeaea;
-  }
-  
-  #contact {
-    background-color: #dcdcdc;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-  
+    margin-bottom: 30px;
+}
+
+.hero-section .btn {
+    padding: 15px 30px;
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    background-color: #e6b800;
+}
+
+/* Optional additional styling */
+.hero-content {
+    z-index: 1; /* Ensure content is above the background */
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay for better readability */
+    z-index: 0; /* Behind content */
+}
+
+.about-us, .services, .contact {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.about-us h2, .services h2, .contact h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-us p, .contact p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact form input, .contact form textarea {
+    width: 80%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact form .btn {
+    padding: 10px 30px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact form .btn:hover {
+    background-color: #004999;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0066cc;
+    color: white;
+}
+
+
+/* Styling untuk hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
     .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background-color: #333;
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #333;
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
     }
-  
+
     .nav-links li {
-      text-align: center;
-      margin: 10px 0;
+        margin: 10px 0;
     }
-  
-    .nav-links li a {
-      display: block;
+
+    .hamburger {
+        display: flex;
     }
-  }
-  
+
+    .hamburger.active + .nav-links {
+        display: flex;
+    }
+}
