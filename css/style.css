@@ -85,6 +85,16 @@
   
   .background-section {
     animation: slideshow 15s infinite;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    font-size: 24px;
   }
   
   section {
