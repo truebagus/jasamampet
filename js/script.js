@@ -1,30 +1,42 @@
-const heroSection = document.querySelector('.hero-section');
+const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const hero = document.querySelector('.hero');
+        const services = document.querySelector('.services');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
 
-    const images = [
-        'url(https://www.southsurreyplumbing.com/wp-content/uploads/2020/03/drain-clogging-1.jpg)',
-        'url(https://www.emergencyplumbingsquad.com/wp-content/uploads/2021/01/plumber-after-unclogging-sink-drain-photo-768x512.jpg)',
-        'url(https://novinkhadamat.com/wp-content/uploads/2021/08/profesional-clogging-work-using-machine.jpg)',
-        'url(https://aceplumbingbaltimore.com/wp-content/uploads/2022/12/clogged-toilet.jpg)'
-    ];
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-    let currentImageIndex = 0;
+        const backgrounds = [
+            'url("https://source.unsplash.com/random/1600x900?service")',
+            'url("https://source.unsplash.com/random/1600x900?business")',
+            'url("https://source.unsplash.com/random/1600x900?work")'
+        ];
+        let currentBg = 0;
 
-    function changeBackgroundImage() {
-        heroSection.style.backgroundImage = images[currentImageIndex];
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-    }
+        function changeBackground() {
+            hero.style.backgroundImage = backgrounds[currentBg];
+            currentBg = (currentBg + 1) % backgrounds.length;
+        }
 
-    // Change background every 5 seconds
-    setInterval(changeBackgroundImage, 5000);
+        setInterval(changeBackground, 5000);
+        changeBackground(); // Initial call
 
-    // Initial background setup
-    changeBackgroundImage();
+        let currentIndex = 0;
+        const cardWidth = 300 + 32; // Width of card + margin
 
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-    
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                services.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < services.children.length - 1) {
+                currentIndex++;
+                services.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            }
+        });
