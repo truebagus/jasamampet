@@ -24,12 +24,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
     padding: 1rem;
     position: fixed;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--primary-color);
 }
 
 .logo {
@@ -145,7 +144,7 @@ h2 {
 
 .services {
     display: flex;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .service-card {
@@ -156,7 +155,6 @@ h2 {
     text-align: center;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
@@ -177,32 +175,6 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-button:hover {
-    background-color: var(--secondary-color);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
 #kontak {
     background-color: var(--primary-color);
     color: var(--light-text);
@@ -221,10 +193,8 @@ h2 {
         position: absolute;
         top: 60px;
         right: 0;
-        background-color: var(--primary-color);
         padding: 1rem;
         align-items: flex-end;
-        box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
     }
 
     .nav-links.active {
@@ -238,4 +208,81 @@ h2 {
     .hamburger {
         display: flex;
     }
+}
+
+#tentang {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Flex-wrap untuk memastikan konten bisa turun ke baris berikutnya pada layar kecil */
+}
+
+.about-image img {
+    width: 100%; /* Gambar responsif */
+    max-width: 400px; /* Batas maksimal gambar */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem; /* Tambahkan margin di bawah untuk jarak pada layar kecil */
+}
+
+.about-text {
+    max-width: 50%; /* Teks akan mengambil 50% dari lebar layar */
+    margin-left: 2rem; /* Jarak antar teks dan gambar di layar besar */
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+/* Media Query untuk Layar Kecil (Responsif) */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Ubah arah flex ke kolom pada layar kecil */
+        text-align: center; /* Teks diratakan ke tengah pada layar kecil */
+    }
+
+    .about-text {
+        max-width: 100%; /* Teks mengambil seluruh lebar pada layar kecil */
+        margin-left: 0; /* Hilangkan margin pada layar kecil */
+    }
+
+    .about-image img {
+        max-width: 300px; /* Batasi ukuran maksimal gambar pada layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-image img {
+        max-width: 100%; /* Gambar memenuhi seluruh layar pada layar sangat kecil */
+    }
+}
+
+
+/* card dots */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #333;
 }
