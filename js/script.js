@@ -10,9 +10,9 @@ const hamburger = document.querySelector('.hamburger');
         });
 
         const backgrounds = [
-            'url("https://source.unsplash.com/random/1600x900?service")',
-            'url("https://source.unsplash.com/random/1600x900?business")',
-            'url("https://source.unsplash.com/random/1600x900?work")'
+            'url("https://www.gainesvilleleakexpert.com/wp-content/uploads/2022/09/Plumbing-installation-first-choice-plumbing-gainesville-florida-29.69117033952106-82.33139223068727.jpg")',
+            'url("https://smartguy.com/webservice/storage/category/plumbing-plan-services.jpg")',
+            'url("https://allnoneplumbing.com/wp-content/uploads/2019/03/all-n-one-plumbing-toilet-installation-residential-plumbing-2.jpeg")'
         ];
         let currentBg = 0;
 

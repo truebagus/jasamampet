@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #4a90e2;
+    --primary-color: #344d69;
     --secondary-color: #50c878;
     --accent-color: #ff6b6b;
     --background-color: #f0f4f8;
@@ -206,6 +206,7 @@ h2 {
 #kontak {
     background-color: var(--primary-color);
     color: var(--light-text);
+    padding: 10px;
 }
 
 #kontak h2 {
