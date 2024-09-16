@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let totalCards = services.children.length;
     let currentIndex = 0;
     let intervalId;
+    let restartTimeoutId; // Timeout ID for restarting autoplay
 
     // Clone first few cards to the end for seamless looping
     const clonedCards = [];
@@ -73,6 +74,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Stop auto-play when a dot is clicked
     function stopAutoPlay() {
         clearInterval(intervalId);
+        clearTimeout(restartTimeoutId); // Clear any scheduled restart to avoid conflicts
+    }
+
+    // Restart auto-play after 5 seconds of inactivity
+    function restartAutoPlay() {
+        stopAutoPlay(); // Ensure it's stopped before scheduling a restart
+        restartTimeoutId = setTimeout(() => {
+            startAutoPlay(); // Restart autoplay after 5 seconds
+        }, 5000);
     }
 
     // Add click event listeners to dots
@@ -80,10 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
         dot.addEventListener('click', () => {
             stopAutoPlay(); // Stop the autoplay on click
             goToSlide(index);
+            restartAutoPlay(); // Schedule the restart after the click
         });
     });
 
     // Start auto-play on page load
     startAutoPlay();
 });
-
