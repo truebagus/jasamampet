@@ -145,16 +145,18 @@ h2 {
 .services {
     display: flex;
     transition: transform 0.5s ease;
+    width: max-content;
 }
 
 .service-card {
     flex: 0 0 300px;
     margin: 0 1rem;
-    padding: 1.5rem;
+    padding: 16px;
     border-radius: 10px;
     text-align: center;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
 }
 
 .service-card:hover {
@@ -274,8 +276,8 @@ h2 {
 }
 
 .dot {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     margin: 0 5px;
     background-color: #ddd;
     border-radius: 50%;
