@@ -148,14 +148,13 @@ h2 {
 }
 
 .service-card {
-    flex: 0 0 300px; /* Default width for desktop */
+    flex: 0 0 300px;
     margin: 0 1rem;
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
 }
 
 .service-card:hover {
