@@ -137,24 +137,21 @@ h2 {
 
 .services-container {
     position: relative;
-    max-width: 100%;
     overflow: hidden;
-    padding: 1rem 0;
+    width: 100%;
 }
 
 .services {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
+    width: max-content;
 }
 
 .service-card {
-    flex: 0 0 300px;
-    margin: 0 1rem;
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 16px;
 }
 
 .service-card:hover {
@@ -268,21 +265,27 @@ h2 {
 
 /* card dots */
 .carousel-indicators {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .dot {
-    width: 15px;
-    height: 15px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
     margin: 0 5px;
-    background-color: #ddd;
+    background-color: gray;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .dot.active {
     background-color: #333;
+}
+
+/* CSS Media Query untuk ukuran HP */
+@media (max-width: 600px) {
+    .service-card {
+        width: 100%; /* Tampilkan satu card penuh di layar HP */
+    }
 }

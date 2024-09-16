@@ -27,23 +27,19 @@ changeBackground(); // Initial call to set the first background
 document.addEventListener('DOMContentLoaded', function () {
     const services = document.querySelector('.services');
     const dots = document.querySelectorAll('.dot');
-    const cardWidth = 300 + 32; // Width of card + margin
     let totalCards = services.children.length;
     let currentIndex = 0;
     let intervalId;
     let restartTimeoutId; // Timeout ID for restarting autoplay
 
-    // Clone first few cards to the end for seamless looping
-    const clonedCards = [];
-    for (let i = 0; i < totalCards; i++) {
-        const clone = services.children[i].cloneNode(true);
-        services.appendChild(clone);
-        clonedCards.push(clone);
+    // Function to get the current width of each card
+    function getCardWidth() {
+        return document.querySelector('.service-card').offsetWidth;
     }
-    totalCards = services.children.length; // Update total cards after cloning
 
     // Function to move carousel to a specific slide
     function goToSlide(index, transition = true) {
+        const cardWidth = getCardWidth(); // Get the updated width dynamically
         if (!transition) {
             services.style.transition = 'none';
         } else {
@@ -96,4 +92,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Start auto-play on page load
     startAutoPlay();
+
+    // Resize event listener to update card width when the window is resized
+    window.addEventListener('resize', () => {
+        goToSlide(currentIndex, false); // Re-calculate position after resizing
+    });
 });
