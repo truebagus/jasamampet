@@ -286,3 +286,9 @@ h2 {
 .dot.active {
     background-color: #333;
 }
+/* CSS Media Query untuk ukuran HP */
+@media (max-width: 600px) {
+    .service-card {
+        width: 100%; /* Tampilkan satu card penuh di layar HP */
+    }
+}
