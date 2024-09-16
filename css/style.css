@@ -145,18 +145,17 @@ h2 {
 .services {
     display: flex;
     transition: transform 0.5s ease;
-    width: max-content;
 }
 
 .service-card {
-    flex: 0 0 300px;
+    flex: 0 0 300px; /* Default width for desktop */
     margin: 0 1rem;
-    padding: 16px;
+    padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
+    transition: transform 0.3s ease;
 }
 
 .service-card:hover {
@@ -276,8 +275,8 @@ h2 {
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     margin: 0 5px;
     background-color: #ddd;
     border-radius: 50%;
@@ -288,9 +287,45 @@ h2 {
 .dot.active {
     background-color: #333;
 }
-/* CSS Media Query untuk ukuran HP */
-@media (max-width: 600px) {
+
+/* Media Queries for responsive design on mobile screens */
+@media (max-width: 768px) {
     .service-card {
-        width: 100%; /* Tampilkan satu card penuh di layar HP */
+        flex: 0 0 80%; /* Card width adjusts to 80% on smaller screens */
+        margin: 0 auto; /* Center card in the viewport */
+    }
+
+    .services {
+        justify-content: center; /* Ensure services are centered */
+    }
+
+    .carousel-indicators {
+        margin-top: 15px; /* Slightly adjust the margin for smaller screens */
+    }
+
+    .dot {
+        width: 12px; /* Make dots smaller for mobile */
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        flex: 0 0 100%; /* Full width for very small screens */
+        margin: 0 0.5rem; /* Smaller margins */
+        padding: 1rem; /* Reduce padding */
+    }
+
+    .service-card img {
+        height: 150px; /* Reduce image height for mobile */
+    }
+
+    .dot {
+        width: 10px; /* Even smaller dots on very small screens */
+        height: 10px;
+    }
+
+    .carousel-indicators {
+        margin-top: 10px; /* Less margin for very small screens */
     }
 }
