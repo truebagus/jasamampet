@@ -115,7 +115,7 @@ h2 {
         width: 100%;
         height: calc(100vh - 60px); /* Full height minus header */
         text-align: center;
-        padding: 2rem 0;
+        padding: 1.5rem 0;
         overflow-y: auto; /* Allow scrolling if menu is too long */
         transition: all 0.3s ease; /* Smooth transition for menu appearance */
     }
@@ -125,7 +125,7 @@ h2 {
     }
 
     .menu ul li {
-        margin: 1.5rem 0;
+        margin: 0.1rem 0;
         opacity: 0;
         transform: translateY(20px);
         transition: all 0.3s ease;
@@ -181,9 +181,8 @@ h2 {
         content: '';
         display: block;
         width: 30%;
-        margin: 0.8rem auto;
+        margin: 0.5rem auto; /* Reduced the space between the items */
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    
 }
