@@ -1,6 +1,18 @@
 .services {
     padding: 80px 0;
-    background-color: #f9f9f9;
+    background-color: #ffffff; /* White background */
+    position: relative;
+    overflow: hidden;
+}
+
+.services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #007bff, #00ff88); /* Colorful top border */
 }
 
 .container {
@@ -10,10 +22,19 @@
 }
 
 .services h2 {
-    font-size: 2.5rem;
-    color: #333;
+    color: #2c3e50;
     text-align: center;
     margin-bottom: 20px;
+    position: relative;
+}
+
+.services h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 15px auto 0;
 }
 
 .section-description {
@@ -28,15 +49,19 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
+    position: relative;
+    z-index: 2;
 }
 
+
 .service-card {
-    background-color: #fff;
+    background-color: #f8f9fa; /* Light gray background for cards */
     border-radius: 8px;
     padding: 30px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid #007bff; /* Blue accent on top of each card */
 }
 
 .service-card:hover {
@@ -52,22 +77,22 @@
 
 .service-card h3 {
     font-size: 1.5rem;
-    color: #333;
+    color: #2c3e50;
     margin-bottom: 15px;
 }
 
 .service-card p {
-    color: #666;
+    color: #5a6a7e;
     font-size: 1rem;
     line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-    .services {
+    .services, .about-us {
         padding: 60px 0;
     }
 
-    .services h2 {
+    .services h2, .about-us h2 {
         font-size: 2rem;
     }
 
