@@ -17,3 +17,23 @@ function changeBackgroundImage() {
 
 // Change image every 5 seconds
 setInterval(changeBackgroundImage, 5000);
+
+const texts = [
+    "Your excellent plumbing service",
+    "We fix it right the first time",
+    "Fast, reliable, and affordable"
+];
+
+let index = 0;
+const changingText = document.getElementById('changing-text');
+
+function changeText() {
+    changingText.style.opacity = 0; // Fade out
+    setTimeout(() => {
+        changingText.textContent = texts[index];
+        changingText.style.opacity = 1; // Fade in
+        index = (index + 1) % texts.length;
+    }, 500); // Adjust fade-out time
+}
+
+setInterval(changeText, 3000); // Change every 3 seconds
