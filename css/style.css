@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html, body {
     overflow-x: hidden;
     width: 100%;
@@ -36,7 +37,7 @@ main {
 }
 
 .hidden {
-    top: -100px;  /* Navbar hidden when scrolling down */
+    top: -100px; /* Navbar hidden when scrolling down */
 }
 
 .logo img {
@@ -166,10 +167,6 @@ h2 {
         letter-spacing: 1px;
     }
 
-    .menu ul li a:hover {
-        color: #f0f0f0; /* Slight color change on hover for feedback */
-    }
-
     .hamburger {
         display: flex;
         transition: all 0.3s ease;
@@ -190,13 +187,15 @@ h2 {
     .hamburger.toggle span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
-    .menu ul li a:hover, .menu ul li a:focus {
+
+    .menu ul li a:hover {
         color: #ffffff;
         background-color: rgba(255, 255, 255, 0.1);
         transform: scale(1.05);
     }
-     /* Add a subtle line between menu items */
-     .menu ul li:not(:last-child)::after {
+
+    /* Add a subtle line between menu items */
+    .menu ul li:not(:last-child)::after {
         content: '';
         display: block;
         width: 30%;
@@ -211,7 +210,6 @@ h2 {
     .hero p {
         font-size: 18px;
     }
-
 }
 
 @media (max-width: 480px) {
@@ -236,7 +234,7 @@ h2 {
 
     .hero h1 {
         font-size: 24px;
-    }
+ }
 
     .hero p {
         font-size: 14px;
