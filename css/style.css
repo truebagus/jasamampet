@@ -3,23 +3,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
 
 body {
-    font-family: 'Poppins', sans-serif; /* Apply the new font */
-    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
 }
 
 main {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem;
     background-color: rgba(255, 255, 255, 0.5);
     transition: top 0.3s ease, background-color 0.3s ease;
     z-index: 1000;
@@ -31,6 +41,7 @@ main {
 
 .logo img {
     max-width: 150px;
+    height: auto;
 }
 
 .menu {
@@ -75,7 +86,7 @@ main {
 
 /* Hero Section */
 .hero {
-    height: 100vh; /* Tinggi 100% dari viewport untuk layar besar */
+    min-height: 100vh;
     background: url('https://th.bing.com/th/id/OIG1.nHXLplLK9wBAL9qCxAW7?w=1024&h=1024&rs=1&pid=ImgDetMain') center/cover no-repeat;
     display: flex;
     flex-direction: column;
@@ -83,9 +94,7 @@ main {
     align-items: center;
     color: white;
     text-align: center;
-    position: relative;
-    background-size: cover; /* Make sure the background covers the hero */
-
+    padding: 1rem;
 }
 
 .hero h1 {
@@ -125,7 +134,7 @@ h2 {
         width: 100%;
         height: calc(100vh - 60px); /* Full height minus header */
         text-align: center;
-        padding: 1.5rem 0;
+        padding: 1rem 0;
         overflow-y: auto; /* Allow scrolling if menu is too long */
         transition: all 0.3s ease; /* Smooth transition for menu appearance */
     }
@@ -212,5 +221,24 @@ h2 {
 
     .hero p {
         font-size: 16px;
+    }
+}
+
+/* Perbaikan tambahan untuk layar sangat kecil */
+@media (max-width: 320px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .logo img {
+        max-width: 120px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
     }
 }
