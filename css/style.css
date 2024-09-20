@@ -6,7 +6,13 @@
 
 body {
     font-family: 'Poppins', sans-serif; /* Apply the new font */
+    overflow-x: hidden;
 }
+
+html, body {
+    width: 100%;
+}
+
 main {
     flex: 1;
 }
